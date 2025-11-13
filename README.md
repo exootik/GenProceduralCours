@@ -27,5 +27,5 @@ Le jeu de la vie de Conway utilise le cellular automata. L'objectif est de crée
 Solution la plus optimisé et complexe pour la génération procédurale. Permet de généré des terrains complexe. On génère un "bruit" qui a des valeurs entre 0 et 1 sur une taille donnée et on le lie par exemple aux reliefs d'une carte (le 0 corresponds au sol et le 1 a la hauteur max possible des montagnes)
 
 <p align="center">
-  <img src="assets/noise.png" alt="Noise example" width="340" />
+  <img src="assets/noise.jng" alt="Noise example" width="340" />
 </p>
