@@ -29,3 +29,35 @@ Solution la plus optimisé et complexe pour la génération procédurale. Permet
 <p align="center">
   <img src="assets/noise.jpg" alt="Noise example" width="340" />
 </p>
+
+## Les class :
+
+### FastNoiseLite
+Permet d'implémenter l'algorithme de bruit (OpenSimplex, Perlin ect...). Utilisé pour générer des valeurs de hauteur
+
+### FastNoiseLite
+C'est une class abstraite qui définit la structure pour toutes les méthodes de génération
+
+### ProceduralGridGenerator
+Permet de généré une grid et d'exposer des parametres comme la seed, le delai de chaque étape, le choix de la méthode de génération
+
+### SimpleRoomPlacement
+Génère des rectangle aléatoirement en vérifiant si on peut les poser ou non puis connecte chaque salle avec la précedente via des couloirs en L
+
+### BSP 
+On coupe une zone en deux de manière recursive (en rappelant la méthode plusieurs fois) jusqu'a une taille. On optient pleins de petites zones, on génère ensuite une salle dans chaque zone puis on les relies
+
+### Cellular automata
+On initialise une des cellules de différents type aléatoirement (Grass et water ici) sur un espace donnée. On itère dans cette zone en modifiant une cellule en fonction de ces voisines plusieurs fois jusqu'a l'optention d'un rendu voulu (plusieurs iles, caverne, zone organique)
+
+### Noise
+On instancie FastNoiseLite avec une seed (valeur qui fait varié l'aléatoire). Pour chaque coordonnée du noise, on récupère le bruit (de -1 a 1), puis on transpose cette valeur sur une carte en metant par exemple les valeurs proches de -1 en "Grass" et les valeurs proche de 1 en "Water". Cela permet de créer des biomes variés en jouant sur les paramètres
+
+## Comment l'utiliser
+Importer / cloner le projet dans Unity.
+Placer un GameObject avec le composant ProceduralGridGenerator.
+Dans le gameObject, sélectionner la méthode de generation entre : SimpleRoomPlacement, BSP, CelularAutomata et NoiseGenerator.
+Renseigner des parametres comme le Seed, le Step Delay ou d'autres particuliers a votre méthode de generation
+Lancer le projet
+
+
